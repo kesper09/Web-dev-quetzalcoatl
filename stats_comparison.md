@@ -9,6 +9,12 @@ This table compares the slicing statistics for each model when run on a 2-core V
 - **CPU%** is much higher on 16 cores, showing better CPU utilization.
 - **Max RSS** (memory usage, now in MB) is generally higher on 16 cores, possibly due to more threads in use.
 
+**Term meanings:**
+- **User time:** Time spent running the program's own code (lower is faster).
+- **System time:** Time spent in OS/kernel operations (lower is better, but some increase is normal with more parallelism).
+- **CPU%:** How much CPU was utilized (higher means better parallel usage).
+- **Max RSS:** Peak memory used (in MB); shows memory demand, should fit within available RAM.
+
 | Model        | User time (2c) | User time (16c) | System time (2c) | System time (16c) | CPU% (2c) | CPU% (16c) | Max RSS (2c, MB) | Max RSS (16c, MB) |
 |-------------|---------------|-----------------|------------------|-------------------|-----------|------------|------------------|-------------------|
 | cat         | 11.26         | 6.79            | 0.22             | 1.16              | 189%      | 287%       | 133.45           | 206.97            |
